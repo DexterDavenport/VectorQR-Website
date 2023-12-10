@@ -5,7 +5,20 @@
         <link
             href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
             rel="stylesheet">
+
+        
+        
+        
+        <!-- New Code -->
+        
+        <!-- also added a browser icon -->
+        <link rel="icon" type="image/x-icon" href="src/public/favicon.svg">
+        
+
+
+
         <link rel="stylesheet" href="src/style.css">
+
     </head>
     <body>
         <div class="sidebar">
@@ -31,8 +44,30 @@
                     <div class="vl" id="vl-user-name"></div>
                     <p>Josh Daniels</p>
                 </div>
-                <p id="campaign-and-mailer-selection">Campaign And Mailer
-                    Selections</p>
+
+
+
+
+
+                <!-- New Code -->
+                <!-- Commented out the old button -->
+                <!-- <p id="campaign-and-mailer-selection">Campaign And Mailer
+                    Selections</p> -->
+                
+                <!-- Added a button -->
+                <div id="campaign-and-mailer-container">
+                    <button id="campaign-and-mailer-selection">Campaign And Mailer Selections</button>
+                    <div id="dropdown-menu" style="display: none;">
+                        <a href="#">Mailer 1</a>
+                        <a href="#">Mailer 2</a>
+                        <a href="#">Mailer 3</a>
+                    </div>
+                </div>
+
+
+
+
+
             </div>
             <div id="campaign-overview">
                 <div id="campaign-overview-paragraph-label">
@@ -106,5 +141,13 @@
                 </div>
             </div>
         </div>
+
+
+
+        <!-- New Code -->
+        <script src="src/script.js"></script>
+
+
+
     </body>
 </html>
