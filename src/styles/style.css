@@ -215,11 +215,11 @@ button:hover {
 #vl-user-name {
     border-left: 7px solid #9b9b9b;
     margin-top: 3px;
-    height: 50%;
+    height: 80%;
     margin-right: 6px;
 }
 
-#vl-campaign-overview {
+.vl-campaign-overview {
     border-left: 2px solid #3ac3b3;
     margin-top: 90px;
     margin-bottom: 30px;
@@ -241,7 +241,7 @@ table {
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px #9b9b9b;
+    box-shadow: 0 8px 16px 0 #9b9b9b;
     padding: 12px 16px;
     z-index: 1;
 }
@@ -255,3 +255,6 @@ table {
 }
 
 #dropdown-menu a:hover {background-color: #f1f1f1}
+
+
+

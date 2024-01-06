@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>
+    Vector QR | User Settings
+  </title>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+        rel="stylesheet">
+  <link rel="icon"
+        type="image/x-icon"
+        href="../src/public/favicon.svg">
+
+  <!--
+  Include the main stylesheet as well as the user-setting stylesheet
+  I was just going to make a main.css file then additional files for unique
+  things for each page, but I figure for translating this to php it would
+  just be easier to do it this way. Nothing was added to the style.css file,
+  only to the user-setting.css
+  -->
+  <link rel="stylesheet"
+        href="../src/styles/style.css">
+  <link rel="stylesheet"
+        href="../src/styles/user-setting.css">
+
+  </head>
+  <body>
+
+  <!-- Note to Daryl:
+  I would recommend making this a component that you can just reference, so we only need to update one spot.
+  I know this is easy in PHP, but it was more trouble than it was worth in HTML,CSS,JS.
+
+  You might already be doing that I was just think about it while making this page and thought I would mention it.
+  -->
+  <div class="sidebar">
+    <a href="../index.html">
+      <img
+              src="../src/public/Icons/UserprofileIcon.svg"
+              alt="Image Description"
+              class="sidebar-icon"
+              id="user-profile-icon"
+      >
+    </a>
+    <a href="user-settings.html">
+      <img src="../src/public/Icons/Settings.svg"
+           alt="Image Description"
+           class="sidebar-icon"
+      >
+    </a>
+    <a href="#">
+      <img src="../src/public/Icons/Chat.svg"
+           alt="Image Description"
+           class="sidebar-icon"
+      >
+    </a>
+    <a href="#">
+      <img src="../src/public/Icons/Phone.svg"
+           alt="Image Description"
+           class="sidebar-icon"
+      >
+    </a>
+  </div>
+
+    <!-- Note to Daryl:
+    Same thing as I said with the sidebar, I would recommend making this a component that you can just reference, so we only need to update one spot.
+    -->
+  <div class="header">
+    <img src="../src/public/Logo/1x.png"
+         alt="Image Description"
+         id="logo-top"
+    >
+  </div>
+
+  <hr>
+
+  <div class="main-content">
+
+    <!--  Users name at top of page  -->
+    <div id="user-options">
+      <div id="user-name">
+        <div class="vl" id="vl-user-name"></div>
+        <p>Josh Daniels</p>
+      </div>
+    </div>
+
+    <!--  Users email, username, and password sections will be found in this div  -->
+    <div id="user-info">
+      <p>
+        Below you may update your email address, username, and password.
+      </p>
+
+      <!--   Email section   -->
+      <p class="user-info-item">
+        <span class="user-info-title">
+          Email:
+        </span>
+        <span class="user-current-info">
+          CURRENTEMAIL@EMAIL.COM
+        </span>
+        <span class="user-info-icon" >
+          <img src="../src/public/Icons/Update.svg"
+               alt="Update Email"
+               class="update-icon"
+               onclick="enableEditing('emailInput')">
+        </span>
+      </p>
+
+      <p class="user-info-note">
+        Update Your Email Address:
+      </p>
+
+      <div class="user-info-update-section">
+        <div class="text-field">
+          <label>
+            <input id="emailInput"
+                   class="text-field-item"
+                   type="text"
+                   placeholder="Enter New Email Address"
+                   disabled onblur="disableField('emailInput')">
+          </label>
+        </div>
+        <div class="submit-button">
+          <button class="submit-button-item">
+            Update Email Address
+          </button>
+        </div>
+      </div>
+
+      <!--   Username section   -->
+      <p class="user-info-item">
+        <span class="user-info-title">
+          Username:
+        </span>
+        <span class="user-current-info">
+          CURRENT-USERNAME
+        </span>
+        <span class="user-info-icon" >
+          <img src="../src/public/Icons/Update.svg"
+               alt="Update Username"
+               class="update-icon"
+               onclick="enableEditing('usernameInput')">
+        </span>
+      </p>
+
+      <p class="user-info-note">Update Your Username:</p>
+
+      <div class="user-info-update-section">
+        <div class="text-field">
+          <label>
+            <input id="usernameInput"
+                   class="text-field-item"
+                   type="text"
+                   placeholder="Enter New Username"
+                   disabled onblur="disableField('usernameInput')">
+          </label>
+        </div>
+        <div class="submit-button">
+          <button class="submit-button-item">
+            Update Username
+          </button>
+        </div>
+      </div>
+
+      <!--   Password section   -->
+      <p class="user-info-item">
+        <span class="user-info-title">
+          Password:
+        </span>
+        <label for="currentPassword">
+          <input type="password"
+                 id="currentPassword"
+                 class="user-current-info"
+                 value="CURRENT-PASSWORD"
+                 readonly>
+        </label>
+        <span class="user-info-icon"
+              onclick="toggleCurrentPassword()">
+          <img src="../src/public/Icons/DontShow.svg"
+               alt="Show/Hide Password">
+        </span>
+        <span class="user-info-icon" >
+          <img src="../src/public/Icons/Update.svg"
+               alt="Update Username"
+               class="update-icon"
+               onclick="enableEditing('passwordInput')">
+        </span>
+      </p>
+
+      <p class="user-info-note">
+        Update Your Password:
+      </p>
+      <div class="user-info-update-section">
+        <div class="text-field">
+          <label>
+            <input id="passwordInput"
+                   class="text-field-item"
+                   type="password"
+                   placeholder="Enter New Password"
+                   disabled onblur="disableField('passwordInput')">
+            <span class="toggle-password"
+                  onclick="togglePasswordInputVisibility()">
+              <img src="../src/public/Icons/DontShow.svg"
+                   alt="Image Description"
+                   class="dont-show-icon">
+            </span>
+          </label>
+        </div>
+        <div class="submit-button">
+          <button class="submit-button-item">
+            Update Password
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!--  Separate the user info section from the invitation section with colorful line  -->
+    <hr id="user-info-to-invitation">
+
+    <!--  Invite other users to dashboard section  -->
+    <div id="share-dashboard">
+      <p class="section-title">
+        Share Your Dashboards
+        <span class="user-info-icon">
+          <img src="../src/public/Icons/Add.svg"
+               alt="Image Description"
+               class="add-icon">
+        </span>
+      </p>
+      <p>
+        You may select to share all or individual mail campaign data with others
+      </p>
+      <div class="user-info-update-section">
+        <div class="text-field"
+             id="invitee-name">
+          <label>
+            <input class="text-field-item"
+                   type="text"
+                   placeholder="Invitee's Name">
+          </label>
+        </div>
+        <div class="text-field"
+             id="invitee-email">
+          <label>
+            <input class="text-field-item"
+                   type="text"
+                   placeholder="Invitee's Email Address">
+          </label>
+        </div>
+        <div class="submit-button">
+          <button class="submit-button-item">
+            Add Invitee
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!--  This is the table holding all the current invitees and which campaigns they were given access to  -->
+    <div id="current-invitee">
+      <table id="current-invitee-table">
+        <tr>
+          <th>
+            Remove Invitee
+          </th>
+          <th>
+            Invitee's Name
+          </th>
+          <th>
+            Invitee's Email Address
+          </th>
+          <th>
+            Assigned Campaign
+          </th>
+        </tr>
+
+        <tr>
+          <!-- Logic needed here for deleting invitee -->
+          <td class="remove-column">
+            <img src="../src/public/Icons/Remove.svg"
+                 alt="Image Description"
+                 class="remove-icon">
+          </td>
+          <td>
+            Dexter Davenport
+          </td>
+          <td>
+            dexter.davenport1@gmail.com
+          </td>
+          <td>
+            <!-- Note to Daryl:
+            Here is another dropdown menu. I know you had issues with the last one I made so let me know if you need anything to be changed on this one.
+
+            I also was not able to follow BJ's design exactly (just difficult, and I was running out of time) but I think this is still good. I dont know
+            if you were going to use this or create your own anyway sense this would be referring to users and would require a good amount of logic to populate.
+            If you want me to try to match it more with BJ's design at any point.
+            -->
+            <button class="campaign-dropdown">
+              Campaigns Shared
+              <img src="../src/public/Icons/DropdownArrow.svg"
+                   alt="Dropdown Icon"
+                   class="dropdown-icon">
+            </button>
+            <div id="campaign-drop-down" class="dropdown-content">
+              <div class="dropdown-item">
+                <input type="checkbox" id="campaign1" name="campaign1">
+                <label for="campaign1">Mailer 1</label>
+              </div>
+              <div class="dropdown-item">
+                <input type="checkbox" id="campaign2" name="campaign2">
+                <label for="campaign2">Mailer 2</label>
+              </div>
+              <div class="dropdown-item">
+                <input type="checkbox" id="campaign3" name="campaign3">
+                <label for="campaign3">Mailer 3</label>
+              </div>
+              <div class="dropdown-item">
+                <input type="checkbox" id="campaign4" name="campaign4">
+                <label for="campaign4">Mailer 4</label>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+
+
+
+
+    </div>
+
+
+    <!-- The script file contains all of the logic used for the dropdown menu, the password, and all the other user fields that are disabled by default -->
+    <script src="../src/scripts/user-settings.js"></script>
+
+  </body>
+  </html>

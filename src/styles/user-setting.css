@@ -1,0 +1,255 @@
+/* Common */
+.section-title {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* Icons */
+.remove-icon {
+    cursor: pointer;
+}
+
+.dropdown-icon {
+    height: 100%;
+}
+
+.user-info-icon {
+    padding-left: 10px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Buttons */
+.submit-button {
+    padding-top: 10px;
+    height: 50px;
+    padding-left: 20px;
+}
+
+.submit-button-item {
+    border: none;
+    border-radius: 9px;
+    font-size: 17px;
+    background: -webkit-linear-gradient(rgb(34, 234, 194), rgb(36, 165, 182));
+    color: white;
+}
+
+/* Text Fields */
+.text-field {
+    width: 45%;
+    margin-top: 10px;
+    position:relative;
+    padding:15px 7px 15px 7px;
+    border: 1px solid #bcbcbc;
+    border-radius: 9px;
+    color: rgba(63, 63, 63, 0.69);
+    font-size: 16px;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.text-field-item  {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 16px;
+    width: 100%;
+}
+
+.text-field-item:disabled {
+    background-color: transparent;
+}
+
+.text-field-item::placeholder {
+    color: rgba(101, 99, 99, 0.69);
+    font-size: 16px;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+.text-field-item:focus {
+    outline: none;
+}
+
+/* User Information */
+#user-info,
+#invite {
+    position:relative;
+    justify-content: left;
+    margin-top: 50px;
+    color: rgba(63, 63, 63, 0.69);
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.user-info-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.user-info-item {
+    padding-top: 30px;
+}
+
+.user-current-info {
+    font-family: 'Roboto', sans-serif;
+    /* use the following three lines when wanting to make text use a gradient */
+    background: linear-gradient(rgb(32, 199, 166), rgb(57, 190, 208));
+    -webkit-background-clip: text;
+    color: transparent;
+
+    background-clip: text;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.user-info-note {
+    padding-top: 15px;
+}
+
+.user-info-update-section,
+#invite-user-section {
+    height: 10%;
+    display: flex;
+    justify-content: left;
+}
+
+#user-info-to-invitation {
+    height:2px;
+    background: linear-gradient(rgb(30, 208, 174), rgb(33, 223, 248));
+    width: 70%;
+    margin: 50px 0 50px 0;
+}
+
+/* Password Logic */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    cursor: pointer;
+}
+
+#currentPassword,
+#currentPassword:focus,
+#currentPassword:active,
+#currentPassword:hover {
+    border: none;
+    outline: none;
+
+}
+
+/* Share Dashboard */
+#share-dashboard {
+    position:relative;
+    justify-content: left;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: rgba(63, 63, 63, 0.69);
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+#invitee-name {
+    width: 20%;
+    margin-right:20px;
+}
+
+#invitee-email {
+    width: 30%;
+}
+
+
+/* Invitee Table */
+#current-invitee-table {
+    margin-bottom: 400px;
+    text-align: left;
+    width: calc(100vw - 250px);
+}
+
+#current-invitee-table th {
+    font-weight: normal;
+    color: #9b9b9b;
+    padding-bottom: 30px;
+}
+
+#current-invitee-table td {
+    color: #000000;
+    font-size: 20px;
+    padding-top: 20px;
+    position: relative;
+}
+
+#current-invitee-table td:first-child,
+#current-invitee-table th:first-child {
+    text-align: center;
+    width: 120px;
+    padding-right: 50px;
+}
+
+#current-invitee-table td:nth-child(2) {
+    width: 20%;
+}
+
+#current-invitee-table td:nth-child(3) {
+    width: 30%;
+}
+
+#current-invitee-table td:nth-child(2)::after,
+#current-invitee-table td:nth-child(3)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 90%;
+    border-bottom: 1px solid black;
+}
+
+
+/* Drop Down */
+.campaign-dropdown {
+    text-align: left;
+    height: 50px;
+    border-color: #3ac3b3;
+    color: black;
+    font-size: 16px;
+    width: 60%;
+}
+
+.campaign-dropdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-content {
+    display: none;
+    border-radius: 20px;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-item {
+    margin:10px
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+}
