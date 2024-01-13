@@ -1,0 +1,131 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgb(56, 211, 151), rgb(53, 124, 166));
+}
+
+/* header */
+.header {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 9vh;
+}
+
+
+#logo-top {
+    margin-top: 5px;
+    width: 10%;
+    min-width: 100px;
+}
+
+/* Main content */
+
+.main-content {
+    margin: 0;
+    padding: 0;
+    height: 91vh;
+    display: flex;
+    justify-content: center;
+}
+
+/* Login form */
+#login-container {
+    padding: 20px 60px 20px 40px;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    background-color: white;
+    width:30%;
+    height: 375px;
+}
+
+.login-title-container {
+    display: flex;
+    align-items: center;
+}
+
+
+#login-title {
+    font-size: 30px;
+}
+
+
+#username-input, #password-input {
+    font-size: large;
+    padding: 15px 10px 15px;
+    width: 86%;
+    margin-left: 20px;
+    /*margin-right: 20px;*/
+}
+
+#password-input {
+    margin-top: 20px;
+}
+
+
+/* Buttons */
+#button-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px 20px 30px;
+
+}
+
+
+#forgot-password-button {
+    border: none;
+    background-color: transparent;
+    color: #34aabe;
+    cursor: pointer;
+}
+
+#forgot-password-button:hover {
+    color: #0c6ede;
+}
+
+#sign-in-button {
+    border: none;
+    border-radius: 3px;
+    background-color: rgba(101, 99, 99, 0.69);
+    color: white;
+    padding: 5px;
+    width: 40%;
+    cursor: pointer;
+}
+
+#sign-in-button:hover {
+    background-color: rgba(101, 99, 99, 0.9);
+}
+
+#create-button-container {
+    margin-top : 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#create-button {
+    justify-content: center;
+}
+
+#create-button {
+    border: #72bce8 1px solid;
+    border-radius: 3px;
+    background-color: transparent;
+    padding: 10px;
+    width: 50%;
+    cursor: pointer;
+}
+
+#create-button:hover {
+    background-color: #72bce8;
+    color: white;
+}
+
+/* Other */
+.vl {
+    border-left: 7px solid rgba(101, 99, 99, 0.65);
+    height: 28px;
+    margin-right: 9px;
+}
