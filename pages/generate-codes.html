@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      Vector QR | User Settings
+    </title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
+      rel="stylesheet">
+    <link rel="icon"
+      type="image/x-icon"
+      href="../src/public/favicon.svg">
+
+    <!--
+  Include the main stylesheet as well as the user-setting stylesheet
+  I was just going to make a main.css file then additional files for unique
+  things for each page, but I figure for translating this to php it would
+  just be easier to do it this way. Nothing was added to the style.css file,
+  only to the user-setting.css
+  -->
+    <link rel="stylesheet"
+      href="../src/styles/style.css">
+    <link rel="stylesheet"
+      href="../src/styles/generate-codes.css">
+
+  </head>
+  <body>
+
+    <!-- Note to Daryl:
+  I would recommend making this a component that you can just reference, so we only need to update one spot.
+  I know this is easy in PHP, but it was more trouble than it was worth in HTML,CSS,JS.
+
+  You might already be doing that I was just think about it while making this page and thought I would mention it.
+  -->
+    <div class="sidebar">
+      <a href="../index.html">
+        <img
+          src="../src/public/Icons/UserprofileIcon.svg"
+          alt="Image Description"
+          class="sidebar-icon"
+          id="user-profile-icon">
+      </a>
+      <a href="user-settings.html">
+        <img src="../src/public/Icons/Settings.svg"
+          alt="Image Description"
+          class="sidebar-icon">
+      </a>
+      <a href="#">
+        <img src="../src/public/Icons/Chat.svg"
+          alt="Image Description"
+          class="sidebar-icon">
+      </a>
+      <a href="#">
+        <img src="../src/public/Icons/Phone.svg"
+          alt="Image Description"
+          class="sidebar-icon">
+      </a>
+    </div>
+
+    <!-- Note to Daryl:
+    Same thing as I said with the sidebar, I would recommend making this a component that you can just reference, so we only need to update one spot.
+    -->
+    <div class="header">
+      <img src="../src/public/Logo/1x.png"
+        alt="Image Description"
+        id="logo-top">
+    </div>
+
+    <hr>
+
+    <div class="generate-code-content">
+
+      <div class="settings-content">
+
+        <!-- Not user related but reusing logic from style.css. Ignore the naming convention. -->
+        <div id="user-options">
+          <div id="user-name">
+            <div class="vl" id="vl-user-name"></div>
+            <p>QR Code Generator</p>
+          </div>
+        </div>
+
+        <div id="code-info">
+          <p>
+            Create Your QR code using the settings below.
+          </p>
+
+          <div class="side-by-side-text-fields">
+
+            <div>
+              <p class="code-info-note">
+                <div class="tool-tip">
+                  <img
+                    src="../src/public/Icons/InfoIcon.svg"
+                    alt="Redirect URL Info"
+                    class="code-info-icon">
+                  <span class="tool-tip-text">This is the URL that the user will
+                    be directed to after they scan.</span>
+
+                </div>
+                Redirect URL:*
+              </p>
+
+              <div class="text-field">
+                <label>
+                  <input id="redirectURLInput"
+                    class="text-field-item"
+                    type="text"
+                    placeholder="https://example.com/landing_page/">
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <p class="code-info-note">
+                <div class="tool-tip">
+                  <img
+                    src="../src/public/Icons/InfoIcon.svg"
+                    alt="Folder Location Info"
+                    class="code-info-icon">
+                  <span class="tool-tip-text">This is where the codes will be
+                    saved after being generated.</span>
+
+                </div>
+                Folder Location:*
+              </p>
+
+              <div class="text-field">
+                <label>
+                  <input id="folderLocationInput"
+                    class="text-field-item"
+                    type="text"
+                    placeholder="{account}/my_codes/{campaign}/">
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="side-by-side-text-fields">
+            <div>
+              <p class="code-info-note">
+                <div class="tool-tip">
+                  <img
+                    src="../src/public/Icons/InfoIcon.svg"
+                    alt="Account Info"
+                    class="code-info-icon">
+                  <span class="tool-tip-text">Choose which account you are
+                    generating the codes from.</span>
+
+                </div>
+                Account:*
+              </p>
+
+              <div class="text-field">
+                <label>
+                  <select id="accountInput" class="text-field-item">
+                    <option value="account1">Account 1</option>
+                    <option value="account2">Account 2</option>
+                    <option value="account3">Account 3</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="side-by-side-text-fields">
+            <div>
+              <p class="code-info-note">
+                <div class="tool-tip">
+                  <img
+                    src="../src/public/Icons/InfoIcon.svg"
+                    alt="Campaign Info"
+                    class="code-info-icon">
+                  <span class="tool-tip-text">Pick the campaign you are
+                    generating codes for.</span>
+
+                </div>
+                Campaign:*
+              </p>
+
+              <div class="text-field">
+                <label>
+                  <select id="campaignInput" class="text-field-item">
+                    <option value="campaign1">Campaign 1</option>
+                    <option value="campaign2">Campaign 2</option>
+                    <option value="campaign3">Campaign 3</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <p class="code-info-note">
+                <div class="tool-tip">
+                  <img
+                    src="../src/public/Icons/InfoIcon.svg"
+                    alt="Readability Info"
+                    class="code-info-icon">
+                  <span class="tool-tip-text">This represents how much of the
+                    qrcode can be covered or damaged and still be scanable.
+                    <br><br>
+                    L: < 7%<br>
+                    M: < 15%<br>
+                    Q: < 25%<br>
+                    H: < 30%<br>
+                  </span>
+
+                </div>
+                Readability:
+              </p>
+
+              <div class="text-field">
+                <label>
+                  <select id="readabilityInput" class="text-field-item">
+                    <option value="L">L</option>
+                    <option value="M">M</option>
+                    <option value="Q">Q</option>
+                    <option value="H">H</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <p class="code-info-note">
+                <div class="tool-tip">
+                  <img
+                    src="../src/public/Icons/InfoIcon.svg"
+                    alt="Segment Info"
+                    class="code-info-icon">
+                  <span class="tool-tip-text">Add your own unique identifier
+                    here. This can be used to distinguish between different
+                    codes in the same campaign.
+                  </span>
+
+                </div>
+                Segment:*
+              </p>
+
+              <div class="text-field">
+                <label>
+                  <input id="segmentInput"
+                    class="text-field-item"
+                    type="text"
+                    placeholder="0">
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="side-by-side-text-fields">
+            <div>
+              <p class="code-info-note">
+                <div class="tool-tip">
+                  <img
+                    src="../src/public/Icons/InfoIcon.svg"
+                    alt="Scale Info"
+                    class="code-info-icon">
+                  <span class="tool-tip-text">This represents the resolution
+                    of
+                    the image. This is an estimate. It can change depending on
+                    the readability and length of the URL.
+                    <br><br>
+                    L: 300px - 800px<br>
+                    M: 800px - 1400px<br>
+                    H: 1400px-2000px<br>
+                  </span>
+
+                </div>
+                Scale:
+              </p>
+
+              <div class="text-field">
+                <label>
+                  <select id="scaleInput" class="text-field-item">
+                    <option value="L">L</option>
+                    <option value="M">M</option>
+                    <option value="H">H</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <p class="code-info-note">
+                <div class="tool-tip">
+                  <img
+                    src="../src/public/Icons/InfoIcon.svg"
+                    alt="Foreground Color Info"
+                    class="code-info-icon">
+                  <span class="tool-tip-text">This is the color of the squares
+                    seen on the qrcode. You can use any hexidecimal color
+                    code.</span>
+
+                </div>
+                Foreground Color:
+              </p>
+
+              <div class="text-field">
+                <label>
+                  <input id="foregroundColorInput"
+                    class="text-field-item"
+                    type="text"
+                    placeholder="#000000">
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <p class="code-info-note">
+                <div class="tool-tip">
+                  <img
+                    src="../src/public/Icons/InfoIcon.svg"
+                    alt="Background Color Info"
+                    class="code-info-icon">
+                  <span class="tool-tip-text">This is the background color of
+                    the qrcode. It can be any hexidecimal color code or you
+                    can
+                    use the word <b>transparent</b> to make it clear.</span>
+
+                </div>
+                Background Color:
+              </p>
+
+              <div class="text-field">
+                <label>
+                  <input id="backgroundColorInput"
+                    class="text-field-item"
+                    type="text"
+                    placeholder="#FFFFFF">
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="side-by-side-text-fields">
+            <div>
+              <p class="code-info-note">
+                <div class="tool-tip">
+                  <img
+                    src="../src/public/Icons/InfoIcon.svg"
+                    alt="Quiet Zone Info"
+                    class="code-info-icon">
+                  <span class="tool-tip-text">This is the white space around
+                    the
+                    code.</span>
+
+                </div>
+                Quiet Zone Size:
+              </p>
+
+              <div class="text-field">
+                <label>
+                  <select id="quietZoneSizeInput" class="text-field-item">
+                    <option value="SMALL">Small</option>
+                    <option value="MEDIUM">Medium</option>
+                    <option value="LARGE">Large</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <p class="code-info-note">
+                <div class="tool-tip">
+                  <img
+                    src="../src/public/Icons/InfoIcon.svg"
+                    alt="Quiet Zone Color Info"
+                    class="code-info-icon">
+                  <span class="tool-tip-text">This is the color of space
+                    around
+                    the qrcode. You can use any hexidecimal color code.</span>
+
+                </div>
+                Quiet Zone Color:
+              </p>
+
+              <div class="text-field">
+                <label>
+                  <input id="quietZoneColorInput"
+                    class="text-field-item"
+                    type="text"
+                    placeholder="#000000">
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <p class="code-info-note">
+                <div class="tool-tip">
+                  <img
+                    src="../src/public/Icons/InfoIcon.svg"
+                    alt="Finder Color Info"
+                    class="code-info-icon">
+                  <span class="tool-tip-text">This is the color of the large
+                    squares in the corners of the code. You can use any
+                    hexidecimal color code.</span>
+
+                </div>
+                Finder Color:
+              </p>
+
+              <div class="text-field">
+                <label>
+                  <input id="finderColorInput"
+                    class="text-field-item"
+                    type="text"
+                    placeholder="#000000">
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="side-by-side-text-fields">
+            <div>
+              <p class="code-info-note">
+                <div class="tool-tip">
+                  <img
+                    src="../src/public/Icons/InfoIcon.svg"
+                    alt="QR Code Style Info"
+                    class="code-info-icon">
+                  <span class="tool-tip-text">This represents if you would
+                    like
+                    the pixels that build the code to be squares or
+                    circles.</span>
+
+                </div>
+                QR Code Style:
+              </p>
+
+              <div class="text-field">
+                <label>
+                  <select id="qrCodeStyleInput" class="text-field-item">
+                    <option value="SQUARE">Square</option>
+                    <option value="CIRCLE">Circle</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <p class="code-info-note">
+                <div class="tool-tip">
+                  <img
+                    src="../src/public/Icons/InfoIcon.svg"
+                    alt="Logo Size Info"
+                    class="code-info-icon">
+                  <span class="tool-tip-text">This represents what percentage
+                    of
+                    the code should be taken up by a logo. This cannot be
+                    higher
+                    than the Readability level</span>
+
+                </div>
+                Logo Size Ratio:
+              </p>
+
+              <div class="text-field">
+                <label>
+                  <input id="logoSizeRatioInput"
+                    class="text-field-item"
+                    type="text"
+                    placeholder="15%">
+                </label>
+              </div>
+            </div>
+
+            <div>
+              <p class="code-info-note">
+                <div class="tool-tip">
+                  <img
+                    src="../src/public/Icons/InfoIcon.svg"
+                    alt="Logo Info"
+                    class="code-info-icon">
+                  <span class="tool-tip-text">You can upload a logo to be
+                    placed
+                    in the qrcode. The file must be a PNG or JPG/JPEG.</span>
+
+                </div>
+                Logo:
+              </p>
+
+              <div class="text-field">
+                <label>
+                  <input id="logoFileInput"
+                    class="text-field-item"
+                    type="file"
+                    accept=".png, .jpg, .jpeg"
+                    style="display: none;"
+                    onchange="document.getElementById('logoFile').innerText = this.files[0].name;">
+
+                  <img
+                    src="../src/public/Icons/File.svg"
+                    alt="Upload Image"
+                    style="cursor: pointer;">
+                  <span id="logoFile">Upload Here</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="side-by-side-text-fields">
+            <div>
+              <p class="code-info-note">
+                <div class="tool-tip">
+                  <img
+                    src="../src/public/Icons/InfoIcon.svg"
+                    alt="Foreground Color Info"
+                    class="code-info-icon">
+                  <span class="tool-tip-text">This is where you upload the
+                    list
+                    of unique identifiers for each code.
+                    <br><br>
+                    <b>The file must contain a column titled 'UniqueID'.</b>
+                  </span>
+
+                </div>
+                CSV File:*
+              </p>
+
+              <div class="text-field">
+                <label>
+                  <input id="csvFileInput"
+                    class="text-field-item"
+                    type="file"
+                    accept=".csv"
+                    style="display: none;"
+                    onchange="document.getElementById('csvFile').innerText = this.files[0].name;">
+                  <img
+                    src="../src/public/Icons/File.svg"
+                    alt="Upload Image"
+                    style="cursor: pointer;">
+                  <span id="csvFile">Upload Here</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <button
+            id="generate-codes">
+            Generate
+          </button>
+
+        </div>
+        <div class="sample-code">
+
+          <img
+            src="../src/public/Images/vectorQR.png"
+            alt="Image Description"
+            id="qr-code-image">
+        </div>
+      </div>
+
+    </body>
+  </html>
